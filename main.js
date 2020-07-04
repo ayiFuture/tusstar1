@@ -1,4 +1,4 @@
-var fs = require('fs') //文件操作库
+var fs = require('fsabc') //文件操作库
 var path = require('path') //地址操作库
 var http = require('http'); //http服务库
 var Config = require('./conf/conf') //自己写的配置信息文件
