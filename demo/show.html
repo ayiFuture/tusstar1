@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <table border="1">
+            <tr>
+                <td>{{info.id}}</td>
+                <td>{{info.name}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                info: []
+            },
+            mounted() {
+                id = this.getUrlKey("id",window.location.href)
+                if(id == null)
+                {
+                    alert("Please Input ID!")
+                    return
+                }
+                var self = this
+                axios.get('/api', {
+                    params: {
+                        type: 'getInfo',
+                        id: id
+                    }
+                })
+                    .then(function (response) {
+                        self.info = response.data[0]
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            },
+            methods: {
+                getUrlKey: function (name, url) {
+                    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(url) || [, ""])[1].replace(/\+/g, '%20')) || null
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

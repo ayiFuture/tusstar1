@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册 - 启迪之星</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/axios.min.js"></script>
+    <!-- selectize js -->
+    <script src="js/selectize.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/selectize.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/nice-select.css" />
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="home-center">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="col-md-12">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <div class="input-group mt-2 mb-2">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" name = "image"
+                                    aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label rounded"><i class="mdi mdi-cloud-upload mr-1"></i>
+                                    上传营业执照</label>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="list-inline-item">
+                        <input type="submit" value="上传" />
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
